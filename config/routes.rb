@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :comment, :article
+root :to => 'articles#index'
 
+  resources :articles do
+    resources :comments, except: [:new, :show]
+  end
 end
