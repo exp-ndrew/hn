@@ -1,11 +1,11 @@
-<h1>Hacker News Revamped</h1>
-
 <h3>Articles</h3>
 
 <ul>
   <% @articles.each do |article| %>
-    <li><%= article.name %></li>
+    <li><strong><a href = "<%=article.link%>"><%= article.title %></a></strong></li>
+    <%= link_to "#{article.comments.count} comments", article_path(article) %>
   <% end %>
 </ul>
 
 <%= link_to "Add Article", new_article_path, :class => "btn btn-success" %>
+

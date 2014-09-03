@@ -1,0 +1,15 @@
+<%= render('layouts/errors', :object => @article) %>
+
+<%= form_for(@article) do |f| %>
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, :class => "form-control" %>
+      <%= f.label :content %>
+      <%= f.text_area :content, :rows => "4", :class => "form-control" %>
+      <%= f.label :link %>
+      <%= f.text_field :link, :class => "form-control" %>
+    </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+  </div>
+<% end %>
