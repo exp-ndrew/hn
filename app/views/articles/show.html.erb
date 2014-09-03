@@ -6,7 +6,9 @@
   </div>
   <div class="row">
     <% @article.comments.each do |comment| %>
-      <div class="comment"><p><%= comment.text %></p></div>
+      <div class="comment" style="background-color:#eee; border-radius:5px;"><p><%= comment.text %></p></div>
+      <%=link_to "Edit Comment", edit_article_comment_path(@article, comment), :class => "btn btn-xs btn-warning" %>
+      <%=link_to "Delete Comment", article_comment_path(@article, comment), data: {method: "delete"}, :class => "btn btn-xs btn-danger" %>
     <% end %>
   </div>
 </div>

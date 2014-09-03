@@ -13,7 +13,24 @@ class CommentsController < ApplicationController
     redirect_to article_path(@article)
   end
 
+  def update
+    @article = Article.find(params[:article_id])
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    flash[:notice] = "Comment Updated!"
+    redirect_to article_path(@article)
+  end
+
+  def destroy
+    @article = Article.find(params[:article_id])
+    @comment = Comment.find(params[:id])
+    @comment.delete
+    flash[:notice] = "Comment Destroyed!!!"
+    redirect_to article_path(@article)
+  end
+
   def edit
+    @comment = Comment.find(params[:id])
     @article = Article.find(params[:id])
   end
 
