@@ -3,6 +3,6 @@ class Article < ActiveRecord::Base
   has_many :comments, :as => :commentable
   validates :content, :presence => true
   validates :title, :presence => true
-  validates :votes, :presence => true
-  # validates :user_id, :presence => true
+
+  accepts_nested_attributes_for :comments
 end

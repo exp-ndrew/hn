@@ -1,1 +1,12 @@
 <h3><a href = "<%=@article.link%>"><%=@article.title%></a></h3>
+<div class="col-md-6">
+  <div class="row">
+    <h4>Add a Comment</h4>
+    <%= render ('comments/form') %>
+  </div>
+  <div class="row">
+    <% @article.comments.each do |comment| %>
+      <div class="comment"><p><%= comment.text %></p></div>
+    <% end %>
+  </div>
+</div>
