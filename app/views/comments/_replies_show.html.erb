@@ -1,4 +1,4 @@
-<% @article.comments.order('created_at desc').each do |comment| %>
+<% reply.comments.order('created_at desc').each do |comment| %>
   <div class="comment">
     <p><%= comment.text %></p>
   </div>
@@ -16,5 +16,6 @@
   <div class="indent">
     <%= render 'comments/replies_show', :reply => comment, :article => @article %>
   </div>
+
 <% end %>
 <%#= if comment.comments !=nil render 'com_show'%>
