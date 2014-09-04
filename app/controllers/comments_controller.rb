@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
   def create
     if params[:parent_comment_id] != nil
       @parent_comment = Comment.find(params[:parent_comment_id])
+      @user = User.find(params[:user_id])
       @comment = @parent_comment.comments.new(comment_params)
       @parent_comment.save
       @article = Article.find(params[:article_id])
@@ -31,7 +32,12 @@ class CommentsController < ApplicationController
   def destroy
     @article = Article.find(params[:article_id])
     @comment = Comment.find(params[:id])
-    @comment.delete
+    if @comment.comments.any?
+      @comment.text = "This comment has been deleted."
+      @comment.save
+    else
+      @comment.delete
+    end
     flash[:notice] = "Comment Destroyed!!!"
     redirect_to article_path(@article)
   end
@@ -43,6 +49,6 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:text, :article_id, :parent_comment_id)
+      params.require(:comment).permit(:text, :article_id, :parent_comment_id, :user_id)
     end
 end

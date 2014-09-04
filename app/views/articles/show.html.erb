@@ -1,17 +1,24 @@
+<div id = 'errors'>
+  <%= render('layouts/errors', :object => @comment) %>
+</div>
+
 <h3><a href = "<%=@article.link%>"><%=@article.title%></a></h3>
 <div class="col-md-6">
   <div class="row">
     <p><%= @article.content %></p>
   </div>
+
   <div class="row">
+    <% if current_user %>
     <p><%= link_to "Delete Article", article_path, data:{:method => "delete"}, :class => "btn btn-danger btn-xs" %></p>
   </div>
-  <div class="row">
-    <h4>Add a Comment</h4>
-    <%= render ('comments/form') %>
+    <div class="row">
+      <h4>Add a Comment</h4>
+      <%= render ('comments/form') %>
+    <% end %>
   </div>
-  <div class="row">
-  <h4>Comments</h4>
-    <%=render 'comments/com_show'%>
-  </div>
+    <div class="row">
+    <h4>Comments</h4>
+      <%=render 'comments/com_show'%>
+    </div>
 </div>

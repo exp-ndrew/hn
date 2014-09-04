@@ -5,8 +5,8 @@
     <div class="form-group">
       <%= hidden_field_tag "parent_comment_id", comment.id %>
       <%= hidden_field_tag "article_id", article.id %>
+      <%= hidden_field_tag "user_id", current_user.id %>
       <%= f.label :text %>
-      <p> (hey this is the com_form partial) </p>
       <%= f.text_field :text, :class => "form-control" %>
     </div>
     <%= f.submit(:class => "btn btn-primary") %>
