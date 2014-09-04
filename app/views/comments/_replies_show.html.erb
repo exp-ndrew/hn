@@ -4,14 +4,17 @@
   </div>
   <% if current_user %>
     <button class="btn btn-xs btn-default" onclick="document.getElementById('comment_<%= comment.id %>').style.display='initial'">Reply</button>
+  <% end %>
+  <% if current_user%>
+    <% if current_user.id == comment.user_id %>
+      <%=link_to "Edit Comment", edit_article_comment_path(@article, comment), :class => "btn btn-xs btn-warning" %>
 
-    <%=link_to "Edit Comment", edit_article_comment_path(@article, comment), :class => "btn btn-xs btn-warning" %>
+      <%=link_to "Delete Comment", article_comment_path(@article, comment), data: {method: "delete"}, :class => "btn btn-xs btn-danger" %>
+    <% end %>
 
-    <%=link_to "Delete Comment", article_comment_path(@article, comment), data: {method: "delete"}, :class => "btn btn-xs btn-danger" %>
-
-    <div class="comment_reply" id="comment_<%= comment.id %>">
-      <%= render 'comments/com_form', :comment => comment, :article => @article %>
-    </div>
+      <div class="comment_reply" id="comment_<%= comment.id %>">
+        <%= render 'comments/com_form', :comment => comment, :article => @article %>
+      </div>
   <% end %>
   <div class="indent">
     <%= render 'comments/replies_show', :reply => comment, :article => @article %>

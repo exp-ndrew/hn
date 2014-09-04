@@ -3,7 +3,7 @@
 <ul>
   <% @articles.each do |article| %>
     <li><strong><a href = "<%=article.link%>"><%= article.title %></a></strong></li>
-    <%= link_to "#{article.comments.count} comments", article_path(article) %>
+    <%= link_to "View Comments", article_path(article) %>
   <% end %>
 </ul>
 <% if current_user %>
