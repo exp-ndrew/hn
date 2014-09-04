@@ -7,9 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="notice" style="background: green; color: white; text-align:center;">
+  <div id="notice" style="background: green; color: white; text-align:center;">
     <%= flash[:notice] %>
   </div>
+  <% if flash[:alert] %>
+  <div id="alert" style="background: red; color: white; text-align:center;">
+    <%= flash[:alert] %>
+  </div>
+  <% end %>
   <div class="container">
     <h1>Hacker News Revamped</h1>
 

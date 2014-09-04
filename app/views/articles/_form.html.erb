@@ -1,5 +1,6 @@
-<%= render('layouts/errors', :object => @article) %>
-
+<div id = 'errors'>
+  <%= render('layouts/errors', :object => @article) %>
+</div>
 <%= form_for(@article) do |f| %>
   <div class="col-md-6">
     <div class="form-group">

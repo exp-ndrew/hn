@@ -9,8 +9,12 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.create(article_params)
-    flash[:notice] = "Article added."
-    redirect_to articles_path
+    if @article.save
+      flash[:notice] = "Article added."
+      redirect_to articles_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -20,6 +24,13 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comment = Comment.new
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    flash[:alert] = "Article deleted."
+    redirect_to articles_path
   end
 
   private
