@@ -6,7 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
+
   <div id="notice" style="background: green; color: white; text-align:center;">
     <%= flash[:notice] %>
   </div>
@@ -16,8 +19,8 @@
   </div>
   <% end %>
   <div class="container">
-    <h1>Hacker News Revamped</h1>
-
+    <%= render '/sessions/login' %>
+    <h1><a href="/">Hacker News Revamped</a></h1>
     <%= yield %>
   </div>
 </body>
