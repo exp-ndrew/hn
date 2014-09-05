@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20140904164148) do
   enable_extension "plpgsql"
 
   create_table "articles", force: true do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.text     "content"
     t.string   "link"
     t.integer  "votes",      default: 0
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
