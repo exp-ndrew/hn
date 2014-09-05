@@ -23,9 +23,9 @@ A clone of [Hacker News](http://news.ycombinator.com)
 
 ## meta
 
-Rails Basics [assessment](http://www.learnhowtoprogram.com/lessons/rails-basics-assessment) for [Epicodus](http://epicodus.com)
+3..4 September 2014
 
-5 September 2014
+[Dylan Peerenboom](http://github.com/peerend) and [Andrew M Westling](http://github.com/expandrew) via [Epicodus](http://www.learnhowtoprogram.com/lessons/wikipages-to-do-in-rails)
 
-by [Andrew M Westling](http://andrewwestling.com)  
-a@andrewwestling.com
+## license
+MIT
