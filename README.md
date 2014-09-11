@@ -2,6 +2,8 @@
 
 A clone of [Hacker News](http://news.ycombinator.com)
 
+View a live version of this project [here](http://xpndrw-hn.herokuapp.com/).
+
 ## what
 
 * user can post new "articles" with a brief description
@@ -14,6 +16,8 @@ A clone of [Hacker News](http://news.ycombinator.com)
 * the list goes on, but it's beginning to emulate many of the features of the real Hacker News
 
 ## setup
+
+A live version of this project is available [here](http://xpndrw-hn.herokuapp.com/).
 
 1. Clone the repository using `$ git clone`
 1. Run `$ bundle install` to install gems
