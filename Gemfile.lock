@@ -36,6 +36,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.2.0.1)
+      sass (~> 3.2)
     builder (3.2.2)
     capybara (2.2.1)
       mime-types (>= 1.16)
@@ -149,6 +151,7 @@ DEPENDENCIES
   bcrypt-ruby
   better_errors
   binding_of_caller
+  bootstrap-sass (~> 3.2.0)
   capybara
   coffee-rails
   jquery-rails
@@ -156,7 +159,7 @@ DEPENDENCIES
   quiet_assets
   rails
   rspec-rails
-  sass-rails
+  sass-rails (>= 3.2)
   shoulda-matchers
   turbolinks
   uglifier

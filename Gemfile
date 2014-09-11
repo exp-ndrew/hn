@@ -2,14 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'pg'
-gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'  
 gem 'bcrypt-ruby'
-
-
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'sass-rails', '>= 3.2'
 
 group :development do
   gem 'better_errors'
@@ -19,7 +18,6 @@ end
 
 group :test, :development do
   gem 'capybara'
-  gem 'bcrypt-ruby'
   gem 'rspec-rails'
 end
 
