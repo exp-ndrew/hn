@@ -1,8 +1,9 @@
-<div class="user_header">
+<div class="user_header" style="padding: 10px;">
+<a href="http://github.com/expandrew/hn" class="btn btn-xs btn-default">View source code on GitHub</a>
   <% if current_user %>
-    <p>Logged in as <%= current_user.name %> | <%= link_to "Log Out", logout_path %></p>
+    <p>Logged in as <%= current_user.name %> (<%= current_user.email %>) <%= link_to "Log Out", logout_path, :class => "btn btn-xs btn-danger" %></p>
   <% else %>
-    <%= link_to "Sign Up", signup_path %> or
-    <%= link_to "Log In", login_path %>
+    <%= link_to "Sign Up", signup_path, :class => "btn btn-xs btn-success" %> 
+    <%= link_to "Log In", login_path, :class => "btn btn-xs btn-default" %>
   <% end %>
 </div>
