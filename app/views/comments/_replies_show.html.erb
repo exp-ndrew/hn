@@ -1,5 +1,6 @@
 <% reply.comments.order('created_at desc').each do |comment| %>
   <div class="comment">
+    <p><strong><%= comment.user.name %></strong></p>
     <p><%= comment.text %></p>
   </div>
   <% if current_user %>
