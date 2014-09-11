@@ -5,9 +5,9 @@ User.create({name: "Gary", email: "gary@aol.com", password: "go"})
 User.create({name: "Professor Oak", email: "oak@aol.com", password: "go"})
 User.create({name: "Fido", email: "fido@aol.com", password: "go"})
 Article.create({title: "Log In at the top right! hi@aol.com / go", content: "You can log in as a Test User with `hi@aol.com` and the password `go`", link: "/login/", user_id: "1"})
-Article.create({title: "Rovr.io: rethinking email for dogs", content: "We're a startup positioned in the canine email space and we're rethinking everything. We're launching on Tuesday and I wanted to send out some pre-beta alpha-gamma invites to you.", link: "http://andrewwestling.com", user_id: "1"})
-Article.create({title: "Popcorn as a Service", content: "I quit my job at tooler.io.ly to start my first startup, Popcorn as a Service. What do you think?", link: "http://andrewwestling.com", user_id: "1"})
-Article.create({title: "A great search engine", content: "I found this place online that lets you type in some words and find information about those words. Seems like a novel idea but I don't think it'll take off. Thoughts?", link: "http://google.com", user_id: "1"})
+Article.create({title: "Rovr.io: rethinking email for dogs", content: "We're a startup positioned in the canine email space and we're rethinking everything. We're launching on Tuesday and I wanted to send out some pre-beta alpha-gamma invites to you.", link: "http://andrewwestling.com", user_id: "5"})
+Article.create({title: "Popcorn as a Service", content: "I quit my job at tooler.io.ly to start my first startup, Popcorn as a Service. What do you think?", link: "http://andrewwestling.com", user_id: "5"})
+Article.create({title: "A great search engine", content: "I found this place online that lets you type in some words and find information about those words. Seems like a novel idea but I don't think it'll take off. Thoughts?", link: "http://google.com", user_id: "3"})
 
 Comment.create({text: "I want to make Pokémon as a Service!", 
                 user_id: "2", 
@@ -61,5 +61,7 @@ Comment.create({text: "But you can only Edit/Delete comments made by the account
                 user_id: "1", 
                 commentable_id: "12", 
                 commentable_type: "Comment"})
-
-
+Comment.create({text: "I'd use this service!", 
+                user_id: "5", 
+                commentable_id: "2", 
+                commentable_type: "Article"})
